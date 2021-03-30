@@ -1,0 +1,42 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLUYELER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Üyeler</h2>
+<table class="table table-bordered">
+    <tr>
+
+        <th>ÜYE ID</th>
+        <th>ÜYE ADI</th>
+        <th>ÜYE SOYADI</th>
+        <th>ÜYE MAİLİ</th>
+        <th>KULLANICI ADI</th>
+        <th>ŞİFRE</th>
+        <th>TELEFON</th>
+        <th>OKUL</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>KİTAP GEÇMİŞİ</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.ID</td>
+            <td>@u.AD</td>
+            <td>@u.SOYAD</td>
+            <td>@u.MAIL</td>
+            <td>@u.KULLANICI_ADI</td>
+            <td>@u.SIFRE</td>
+            <td>@u.TELEFON</td>
+            <td>@u.OKUL</td>
+            <td><a href="/Uye/UyeSil/@u.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Uye/UyeGetir/@u.ID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Uye/UyeKitapGecmis/@u.ID" class="btn btn-success" style="background-color:lightseagreen">Kitap Geçmişi</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Uye/UyeEkle/" class="btn btn-primary">Yeni ÜYE Ekle</a>
+

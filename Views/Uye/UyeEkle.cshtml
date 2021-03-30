@@ -1,0 +1,57 @@
+﻿@model MVCKutuphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<form class="form-group" method="post">
+    <div></div>
+
+    <div style="margin-top:15px">
+        <label>ÜYE ADI</label>
+
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>ÜYE SOYADI</label>
+
+        @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>ÜYE MAİL</label>
+
+        @Html.TextBoxFor(k => k.MAIL, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>KULLANICI ADI</label>
+
+        @Html.TextBoxFor(k => k.KULLANICI_ADI, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>ŞİFRE</label>
+
+        @Html.TextBoxFor(k => k.SIFRE, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>ÜYE TELEFONU</label>
+
+        @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <label>ÜYE OKULU</label>
+
+        @Html.TextBoxFor(k => k.OKUL, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1">Üye Ekle</button>
+
+    </div>
+
+</form>
+

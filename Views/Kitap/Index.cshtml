@@ -1,0 +1,40 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>KİTAP SAYFASI</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>KİTAP ID</th>
+        <th>KİTAP ADI</th>
+        <th>KİTAP KATEGORİSİ</th>
+        <th>KİTAP YAZARI</th>
+        <th>KİTAP BASIM YILI</th>
+        <th>KİTAP YAYINEVİ</th>
+        <th>KİTAP SAYFASI</th>
+        <th>KİTAP DURUMU</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.ID</td>
+            <td>@k.AD</td>
+            <td>@k.TBLKATEGORI.AD</td>
+            <td>@k.TBLYAZAR.AD &nbsp; @k.TBLYAZAR.SOYAD</td>
+            <td>@k.BASIM_YILI</td>
+            <td>@k.YAYIN_EVI</td>
+            <td>@k.SAYFA</td>
+            <td>@k.DURUM</td>
+            <td><a href="/Kitap/KitapSil/@k.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kitap/KitapGetir/@k.ID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Kitap/KitapEkle/" class="btn btn-primary">Yeni Kitap Ekle</a>

@@ -1,0 +1,44 @@
+﻿@model MVCKutuphane.Models.Entity.TBLKITAP
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<form class="form-group" method="post">
+    <div></div>
+
+    <div style="margin-top:15px">
+        <label>KİTAP ADI</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>KİTAP KATEGORİ</label>
+        @Html.DropDownListFor(k=>k.TBLKATEGORI.ID,(List<SelectListItem>)ViewBag.dgr1,new { @class="form-control"})
+    </div>
+    <div style="margin-top:15px">
+        <label>KİTAP YAZAR</label>
+        @Html.DropDownListFor(k => k.TBLYAZAR.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>KİTAP BASIM YILI</label>
+        @Html.TextBoxFor(k => k.BASIM_YILI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>KİTAP YAYIN EVİ</label>
+        @Html.TextBoxFor(k => k.YAYIN_EVI, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>KİTAP SAYFA</label>
+        @Html.TextBoxFor(k => k.SAYFA, new { @class = "form-control" })
+    </div>
+    
+
+
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1">Kitap Ekle</button>
+
+    </div>
+    <input type="hidden" name="Durum" value="True" />
+
+</form>
+

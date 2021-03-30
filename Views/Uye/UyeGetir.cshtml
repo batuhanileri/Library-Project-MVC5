@@ -1,0 +1,37 @@
+﻿@model  MVCKutuphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "UyeGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@using (Html.BeginForm("UyeGuncelle", "Uye", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.ID)
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.AD)
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.SOYAD)
+        @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.MAIL)
+        @Html.TextBoxFor(k => k.MAIL, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.KULLANICI_ADI)
+        @Html.TextBoxFor(k => k.KULLANICI_ADI, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.SIFRE)
+        @Html.TextBoxFor(k => k.SIFRE, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.TELEFON)
+        @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(k => k.OKUL)
+        @Html.TextBoxFor(k => k.OKUL, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">GÜNCELLE </button>
+    </div>
+}
